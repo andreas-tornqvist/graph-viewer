@@ -8,13 +8,13 @@ export default function Home() {
     <Layout home>
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Grafer</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Välkommen!
         </h1>
 
         <p className={styles.description}>
