@@ -44,43 +44,20 @@ export function getStaticPaths() {
 }
 
 export default function Graph({ graphData }) {
-  // let canvas = <div>Loading...</div>;
-  // useEffect(() => {
-  //   const data = {
-  //     labels: graphData.data.map(x => x.Time),
-  //     datasets: [{
-  //       data: graphData.data.map(x => x.Temperature)
-  //     }]
-  //   };
-  //   console.log('data', data);
-  //   let config = {
-  //     type: 'line',
-  //     options: {},
-  //     data
-  //   };
-  //   let element = document.getElementById("myChart").getContext("2d");
-  //   console.log('element', element);
-  //   element._destroy();
-  //   let chart = new Chart(element, config);
-  // })
-
-
-
-  // let element = document.getElementById('myChart');
-  // let myChart = new Chart(element,
-  //   config);
-  // let plot;
-  // useEffect(() => {
-  // });
-  // let plot;
-  // useEffect(() => {
-  //   plot = <PlotBox></PlotBox>});
+  const data = [{
+    id: "Read",
+    data: graphData.data.map(d => { 
+      return { 
+        x: new Date(d.Time), 
+        y: d.Temperature 
+      } 
+    })}];
+    
   return <>
     Hej!
-    {/* {plot} */}
     <div className="container">
-        <Chart />
-        <style jsx global>{`
+      <Chart data={data} />
+      <style jsx global>{`
             body {
                 height: 100vh;
                 width: 100vw;
