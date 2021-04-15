@@ -1,8 +1,11 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import Layout from '../components/layout';
+import Link from 'next/link';
 
 export default function Home() {
   return (
+    <Layout home>
     <div className={styles.container}>
       <Head>
         <title>Create Next App</title>
@@ -20,33 +23,27 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
+          <Link href="graphs/bak">
+          <a className={styles.card}>
+            <h3>Baksidan &rarr;</h3>
+            <p>Se temperaturhistoriken på baksidan det senaste dygnet</p>
           </a>
+          </Link>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
+          <Link href="graphs/grg">
+          <a className={styles.card}>
+            <h3>Garaget &rarr;</h3>
+            <p>Se temperaturhistoriken i garaget det senaste dygnet</p>
           </a>
+          </Link>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
+          <Link href="custom">
+          <a className={styles.card}>
+            <h3>Manuell &rarr;</h3>
+            <p>Välj parametrar för att se temperaturhistoriken</p>
           </a>
+          </Link>
 
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
         </div>
       </main>
 
@@ -61,5 +58,6 @@ export default function Home() {
         </a>
       </footer>
     </div>
+    </Layout>
   )
 }

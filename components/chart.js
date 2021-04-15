@@ -1,13 +1,14 @@
 import React from 'react'
 import { ResponsiveLine } from '@nivo/line'
+import styles from './chart.module.css';
 
 // import data from '../data'
 // import config from './chart.config'
 
 
-export default function Chart({data}) {
+export default function Chart({data, min, max}) {
   return (
-    <div className="chart">
+    <div className={styles.chart}>
       <ResponsiveLine
       data={data}
       margin={{
@@ -18,7 +19,9 @@ export default function Chart({data}) {
       }}
       yScale={{
         type: "linear",
-        stacked: false
+        stacked: false,
+        min: min,
+        max: max
       }}
       xScale={{
         type: "time",
@@ -29,22 +32,6 @@ export default function Chart({data}) {
         format: "%b %d"
       }}
     />
-      <style jsx>{
-        `
-                   .chart {
-                        height:50vh;
-                        width:60vw;
-                        background: white;
-                        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-                        transition: 0.3s;
-                    }
-                    
-                    .chart:hover {
-                         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-                    }
-                    `
-      }
-      </style>
     </div>
   )
 }
